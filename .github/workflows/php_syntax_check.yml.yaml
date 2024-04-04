@@ -1,5 +1,8 @@
 name: PHP Syntax Check
-on: [push] # Запускать при каждом push в репозиторий
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   syntax-check:
