@@ -1,4 +1,5 @@
 name: PHP Syntax Check
+
 on:
   push:
     branches:
@@ -6,22 +7,17 @@ on:
 
 jobs:
   syntax-check:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
+    runs-on: windows-latest
 
-    - name: Setup PHP
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '5.6.40'
+        php-version: 5.6.40
 
-    - name: Install PHP Coding Standards Fixer
-      run: composer global require friendsofphp/php-cs-fixer
-
-    - name: Check PHP syntax
-      run: |
-        composer global require friendsofphp/php-cs-fixer
-        php ~/.composer/vendor/bin/php-cs-fixer --version
-        php ~/.composer/vendor/bin/php-cs-fixer --diff --dry-run -v fix
-
+    - name: Run PHP syntax check
+      run: php -l C:\xampp\htdocs\bas
         
