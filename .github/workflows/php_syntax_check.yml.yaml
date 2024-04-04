@@ -8,15 +8,16 @@ jobs:
   syntax-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2 
+    - uses: actions/checkout@v2
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '5.6.40' 
+        php-version: '5.6.40'
+
+    - name: Install PHP Coding Standards Fixer
+      run: composer global require friendsofphp/php-cs-fixer
 
     - name: Check PHP syntax
-      run: | 
-        php php-cs-fixer --diff --dry-run -v fix
-        composer global require fabpot/php-cs-fixer
-        
+      run: |
+        php ~/.composer/vendor/bin/php-cs-fixer --diff --dry-run -v fix path/to/your/php/files
