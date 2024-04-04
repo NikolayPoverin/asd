@@ -19,5 +19,7 @@ jobs:
         php-version: 5.6.40
 
     - name: Check PHP syntax
-      run: php -l C:\xampp\htdocs\bas\index.php
+      run: |
+        cd C:\xampp\htdocs\bas
+        composer req --dev phpstan/phpstan phpstan/phpstan-doctrine phpstan/phpstan-phpunit phpstan/phpstan-symfony
         
