@@ -19,5 +19,5 @@ jobs:
         php-version: 5.6.40
 
     - name: Run PHP syntax check
-      run: php -l C:\xampp\htdocs\bas
+      run: php -l bas
         
