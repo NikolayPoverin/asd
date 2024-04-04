@@ -1,0 +1,16 @@
+name: PHP Syntax Check
+on: [push] # Запускать при каждом push в репозиторий
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 # Шаг для клонирования репозитория
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0' # Указываем версию PHP
+
+    - name: Check PHP syntax
+      run: php -l C:/xampp/htdocs/bas/application/classes/Controller/*.php # Проверяем синтаксис PHP файлов по указанному пути
