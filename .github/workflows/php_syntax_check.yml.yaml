@@ -20,9 +20,8 @@ jobs:
 
     - name: Check PHP syntax
       run: |
-        composer global remove friendsofphp/php-cs-fixer
         composer global require friendsofphp/php-cs-fixer
-        ~/.composer/vendor/bin/php-cs-fixer --version
-        ~/.composer/vendor/bin/php-cs-fixer --diff --dry-run -v fix
+        php ~/.composer/vendor/bin/php-cs-fixer --version
+        php ~/.composer/vendor/bin/php-cs-fixer --diff --dry-run -v fix
 
         
