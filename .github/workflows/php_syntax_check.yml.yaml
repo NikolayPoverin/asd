@@ -20,6 +20,6 @@ jobs:
 
     - name: Check PHP syntax
       run: |
-        cd C:\xampp\htdocs\bas
+        D:\bas
         composer req --dev phpstan/phpstan phpstan/phpstan-doctrine phpstan/phpstan-phpunit phpstan/phpstan-symfony
         
