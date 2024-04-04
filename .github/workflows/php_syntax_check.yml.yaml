@@ -8,12 +8,15 @@ jobs:
   syntax-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2 # Шаг для клонирования репозитория
+    - uses: actions/checkout@v2 
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.0' # Указываем версию PHP
+        php-version: '5.6.40' 
 
     - name: Check PHP syntax
-      run: php -l C:/xampp/htdocs/bas/application/classes/Controller/*.php # Проверяем синтаксис PHP файлов по указанному пути
+      run: | 
+        php php-cs-fixer --diff --dry-run -v fix
+        composer global require fabpot/php-cs-fixer
+        
