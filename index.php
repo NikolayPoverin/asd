@@ -6,8 +6,8 @@
  *
  * @link http://kohanaframework.org/guide/about.install#application
  */
-$application = 'application';
-
+afdddddddddddddddddddpplication = 'application';
+dffffffffffffffffffffffffffffffffffffffffffff
 /**
  * The directory in which your modules are located.
  *
