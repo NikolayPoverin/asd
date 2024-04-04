@@ -20,5 +20,6 @@ jobs:
 
     - name: Check PHP syntax
       run: |
-        ~/.composer/vendor/bin/php-cs-fixer fix --diff --dry-run -v C:/xampp/htdocs/bas
+        cd C:/xampp/htdocs/bas
+        ~/.composer/vendor/bin/php-cs-fixer fix --diff --dry-run -v
         
